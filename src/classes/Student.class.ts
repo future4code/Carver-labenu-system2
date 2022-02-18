@@ -19,7 +19,10 @@ export class Student extends User {
     }
 
     private async createStudent() {
-        return await insertStudent(this.id, this.name, this.email, this.birth_date, this.class_id)
+        const dateSplit = this.birth_date.split("/")
+        const newBirthDate = `${dateSplit[2]}-${dateSplit[1]}-${dateSplit[0]}`
+
+        return await insertStudent(this.id, this.name, this.email, newBirthDate, this.class_id)
     }
 
     private async verificateHobbies() {
