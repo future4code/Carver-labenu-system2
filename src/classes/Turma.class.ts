@@ -27,4 +27,4 @@ export abstract class Turma {
 // **`modulo`**: módulo atual da turma
 
 // - pode assumir um valor entre 1 a 6 nas turmas ativas, ou `**0**`, indicando que as aulas dessa turma ainda não começaram
-// - deve iniciar como **`0`**
+// - deve iniciar como **`0`**git
