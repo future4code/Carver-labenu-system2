@@ -1,6 +1,6 @@
 export abstract class User {
+    protected id: string = Date.now().toString()
     constructor(
-        protected id: string,
         protected name: string,
         protected email: string,
       protected birth_date: string,
@@ -9,10 +9,8 @@ export abstract class User {
             this.birth_date=birth_date;
             this.class_id=class_id;
             this.email=email;
-            this.id=id;
+            
 
          }
-         public getClassid(){
-             return this.class_id
-         }
+
 }

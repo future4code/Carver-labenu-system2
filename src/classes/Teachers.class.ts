@@ -2,9 +2,8 @@ import { User } from "./User.class";
 import { SelectClass } from "../services/selectClass";
 import { InsertTeachers } from "../services/InsertTeacher";
 
-class Teachers extends User {
+export class Teachers extends User {
     constructor(
-        id: string,
         name: string,
         email: string,
         birth_date: string,
@@ -12,22 +11,24 @@ class Teachers extends User {
         private specialty: string[]
 
     ) {
-        super(id, email, name, birth_date, class_id);
+        super(email, name, birth_date, class_id);
         this.specialty = specialty;
-
-
+        this.insertTeachers()
     }
     public insertTeachers(): void {
-        const birthModified:Date= 
+        const dateSplit = this.birth_date.split("/")
+        const newBirthDate = `${dateSplit[2]}-${dateSplit[1]}-${dateSplit[0]}`
+
         const res = SelectClass(this.class_id)
         res.then(res => {
             if(res.length>0){
-                InsertTeachers(this.id,this.email,this.name,this.class_id,birthModified,this.specialty)
+                InsertTeachers(this.id,this.email,this.name,this.class_id,newBirthDate,this.specialty)
+            }
+            else{
+                throw new Error("Insira uma turma válida!")
             }
         })
 
     }
-    public getTeachers(): void {
 
-    }
 }
