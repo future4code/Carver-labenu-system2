@@ -7,7 +7,6 @@ import { insertHobbyStudent } from '../services/insertHobbyStudent';
 
 export class Student extends User {
     private hobbies: string[]
-    id: string = Date.now().toString()
 
     constructor(name: string, email: string, birth_date: string, class_id: string, hobbies: string[]) {
         super(name, email, birth_date, class_id)
