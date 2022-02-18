@@ -1,7 +1,9 @@
 export abstract class User {
-    constructor(private id: string,
-        private name: string,
-        private email: string,
-        private birth_date: Date,
-        private turma_id: string) { }
+    protected id: string = Date.now().toString()
+    constructor(
+        protected name: string,
+        protected email: string,
+        protected birth_date: string,
+        protected class_id: string,
+    ) { }
 }
