@@ -1,11 +1,11 @@
 import connection from "../data/connection"
-import { SelectIdSpecialty } from "./SelectIdSpecialty"
+import { selectIdSpecialty } from "./selectIdSpecialty"
 import { InsertSpecialtyTeacher } from "./InsertSpecialtyTeacher"
 
 export const InsertTeachers = async (
     id: string,
-    email: string,
     name: string,
+    email: string,
     class_id: string,
     birth_date: string,
     specialty: string[]
@@ -17,7 +17,7 @@ export const InsertTeachers = async (
     await connection("teacher").insert(newTeacher)
     //insere especialidaade do professor dentro de tabela teacher_specialty
     const getSpecialtyId = specialty.map(async (specialty: any) => {
-        await SelectIdSpecialty(specialty).then(res => {
+        await selectIdSpecialty(specialty).then(res => {
             if (res.length > 0) {
                 InsertSpecialtyTeacher(id, res[0].id)
             }

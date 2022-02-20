@@ -4,6 +4,7 @@ import { createStudent } from './endpoints/createStudent';
 import { app } from "./app";
 import {createTeacher} from "./endpoints/createTeacher"
 import { getAllTeachers } from './endpoints/getAllTeachers';
+import { updateClassTeacher } from './endpoints/updateClassTeacher';
 
 //STUDENT
 
@@ -14,4 +15,5 @@ app.put("/student/class", updateClassStudent)
 //Teacher
 app.post("/teacher", createTeacher);
 app.get("/teacher",getAllTeachers)
+app.put("/teacher",updateClassTeacher)
 

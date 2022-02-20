@@ -1,5 +1,5 @@
 import { User } from "./User.class";
-import { SelectClass } from "../services/selectClass";
+import { selectClass } from "../services/selectClass";
 import { InsertTeachers } from "../services/InsertTeacher";
 
 export class Teachers extends User {
@@ -11,7 +11,7 @@ export class Teachers extends User {
         private specialty: string[]
 
     ) {
-        super(email, name, birth_date, class_id);
+        super(name,email, birth_date, class_id);
         this.specialty = specialty;
         this.insertTeachers()
     }
@@ -19,13 +19,10 @@ export class Teachers extends User {
         const dateSplit = this.birth_date.split("/")
         const newBirthDate = `${dateSplit[2]}-${dateSplit[1]}-${dateSplit[0]}`
 
-        const res = SelectClass(this.class_id)
+        const res = selectClass(this.class_id)
         res.then(res => {
             if(res.length>0){
-                InsertTeachers(this.id,this.email,this.name,this.class_id,newBirthDate,this.specialty)
-            }
-            else{
-                throw new Error("Insira uma turma válida!")
+                InsertTeachers(this.id,this.name,this.email,this.class_id,newBirthDate,this.specialty)
             }
         })
 

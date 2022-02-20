@@ -6,11 +6,9 @@ export abstract class User {
       protected birth_date: string,
         protected class_id: string) {
             this.name=name;
+            this.email=email;
             this.birth_date=birth_date;
             this.class_id=class_id;
-            this.email=email;
-            
-
          }
 
 }

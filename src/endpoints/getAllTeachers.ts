@@ -1,12 +1,13 @@
 import {Request,Response} from "express"
-import { SelectAllTeachers } from "../services/SelectAllTeachers"
+import { selectAllTeachers } from "../services/selectAllTeachers"
 
-export const getAllTeachers=async (req:Request,res:Response)=>{
+export const getAllTeachers= async (req:Request,res:Response): Promise<void>=>{
     try{
-    const result= await SelectAllTeachers()
+        let result= await selectAllTeachers()
     res.status(200).send(result)
 
     }catch(error:any){
+        
         console.log(error.message)
     }
 }
