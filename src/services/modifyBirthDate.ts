@@ -3,3 +3,4 @@ export const modifyBirthDate=(array:any)=>{
         result.birth_date = result.birth_date.toLocaleDateString()
         })
 }
+//tete
