@@ -1,3 +1,4 @@
+import { modifyBirthDate } from './../services/modifyBirthDate';
 import { selectStudentsHobbies } from './../services/selectStudentsHobbies';
 import { Request, Response } from "express"
 
@@ -16,6 +17,8 @@ export const getStudentsByHobby = async (req: Request, res: Response) => {
         if (!students.length) {
             throw new Error("Hobby ou estudantes não encontrados.")
         }
+
+        modifyBirthDate(students)
 
         // ----------------------------------------------------------
 

@@ -1,3 +1,4 @@
+import { modifyBirthDate } from './../services/modifyBirthDate';
 import { getStudent } from '../services/selectStudent';
 import { Request, Response } from "express";
 
@@ -17,6 +18,7 @@ export const getStudents = async (req: Request, res: Response) => {
             throw new Error("Estudante não encontrado.")
         }
 
+        modifyBirthDate(student)
         // ----------------------------------------------------------
 
         res.status(200).send({
