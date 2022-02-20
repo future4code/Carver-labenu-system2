@@ -41,7 +41,6 @@ export class Student extends User {
             const res: Hobby[] = await getHobbies(hobby)
 
             if (res.length) {
-                console.log("bateu", res)
                 await insertHobbyStudent(this.id, res[0].id)
             }
         }

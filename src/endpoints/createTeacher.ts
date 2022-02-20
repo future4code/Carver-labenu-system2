@@ -4,8 +4,8 @@ import { selectClass } from "../services/selectClass";
 import { selectIdSpecialty } from "../services/selectIdSpecialty";
 import { selectTeacherById } from "../services/selectTeacherById";
 import { validateDate } from "../services/validateDate";
-import { verificateAge } from "../services/verificateAge";
 import { validateEmail } from "../services/validateEmail";
+import { verificateAge } from "../services/verificateAge";
 
 export const createTeacher = async (req: Request, res: Response) => {
     try {
@@ -18,7 +18,6 @@ export const createTeacher = async (req: Request, res: Response) => {
         if (typeof name !== "string" || typeof email !== "string" || typeof birth_date !== "string" || typeof class_id !== "string") {
             throw new Error("O  tipo aceito das propriedades name, email, class_id e  birth_id é string, por favor preencha de forma correta.")
         }
-
         if (!result.length) {
             throw new Error("coloque um class_id válido")
         }
@@ -73,6 +72,10 @@ export const createTeacher = async (req: Request, res: Response) => {
                     res.status(422)
                     break
                 case "coloque um class_id válido":
+                    res.status(404)
+                case "Birth_date está no formato errado: DD/MM/YYYY":
+                    res.status(422)
+                case "Você colocou uma data maior que a atual ou não possui idade o suficiente para fazer parte da Labenu":
                     res.status(422)
                     break
                 case "Birth_date está no formato errado: DD/MM/YYYY":
