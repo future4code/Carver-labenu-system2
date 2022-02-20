@@ -8,5 +8,4 @@ export const insertHobbyStudent = async (student_id: string, hobby_id: string): 
             student_id: student_id,
             hobby_id: hobby_id
         })
-
 }
