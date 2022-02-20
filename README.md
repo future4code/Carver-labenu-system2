@@ -20,24 +20,15 @@
 - Atualizar a turma do docente.
 - Criar Docente.
 
-<<<<<<< HEAD
-**O que não funciona**
-=======
 ---
-
 **O que não funciona:**
->>>>>>> 502a0391d3c5bf749836aa0e42c728025fc8efb2
+
 - Criar turmas.
 - Buscar Turmas ativas.
 - Mudar turma de módulo.
-
-<<<<<<< HEAD
-**Tecnologias e bibliotecas ultizadas**
-=======
 ---
 
 **Tecnologias e bibliotecas utilizadas:**
->>>>>>> 502a0391d3c5bf749836aa0e42c728025fc8efb2
 - MySQL
 - POO(Programação Orientado a Objeto)
 - Express
@@ -46,26 +37,11 @@
 - Node.js
 - Cors
 - Dotenv
-
-<<<<<<< HEAD
-
-=======
 ---
->>>>>>> 502a0391d3c5bf749836aa0e42c728025fc8efb2
 ## Documentação:
 https://documenter.getpostman.com/view/18386406/UVkjwxgs
 
 *Modo de usar*
-<<<<<<< HEAD
-- abrir o terminal e rodar o comando : npm i 
-- abrir o terminal no vscode, é só clicar em "Terminal" e ele vai abrir. 
-- você deve ir do lado de onde está escrito "powershell" tem um simbolo de "+" do lado dele tem uma setinha, use ela e selecione o git bash.
-- com o git bash aberto rode o comando npm run start. 
-- abra o postman e coloque essa url: http://localhost:3003 
-- depois é só testar os parametros que quiser.
-- se quiser pegar todos os estudantes você deve usar o metodo get e essa url: http://localhost: 3003/student
-=======
-
 - abrir o terminal e rodar o comando : npm i
 - abrir o terminal no vscode, é só clicar em "Terminal" e ele vai abrir.
 - você deve ir do lado de onde está escrito "powershell" tem um simbolo de "+" do lado dele tem uma setinha, use ela e selecione o git bash.
@@ -73,4 +49,3 @@ https://documenter.getpostman.com/view/18386406/UVkjwxgs
 - abra o postman e coloque essa url: http://localhost:3003
 - depois é só testar os parametros que quiser.
 - se quiser pegar todos os estudantes você deve usar o metodo get e essa url: http://localhost: 3003/student
->>>>>>> 502a0391d3c5bf749836aa0e42c728025fc8efb2
