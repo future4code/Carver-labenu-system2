@@ -1,33 +1,54 @@
-## LabenuSystem:
+![Logo do LabeSystem](https://labenu.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fcc180129-9094-4c61-b090-0e2ed9dbc4d6%2F120907410-7dbd7000-c637-11eb-83cf-dd7ac8812e02_(1).png?table=block&id=2519db1c-4a5e-4b42-b91f-df35a2db826b&spaceId=f97190af-c9c2-4592-9ae2-6311b6b728de&width=1250&userId=&cache=v2) 
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
+# LabeSystem:
+### Está API foi criada com intuito de treinar habilidades de backend. Ela simula um sistema de administração interna de um curso, com estudantes, docentes e turma.
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+---
+## Integrantes:
 
-1. Estudantes 
+<a href="https://github.com/BellaQuaranta"> Anna Isabella Gomes Quaranta </a>
+</br>
+<a href="https://github.com/yanikisia"> Yanikisia Kathlyn Barbosa Cavalcante </a>
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+---
+**O que funciona:**
+- Pegar todos estudantes ou pegar um estudante especifico por nome.
+- Pegar todos os estudantes de um hobby especifico.
+- Atualizar a turma de um estudantes especifico.
+- Criar estudante.
+- Pegar todos docentes.
+- Atualizar a turma do docente.
+- Criar Docente.
 
-2. Docente
+---
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
+**O que não funciona:**
+- Criar turmas.
+- Buscar Turmas ativas.
+- Mudar turma de módulo.
 
-3. Turma
+---
 
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
+**Tecnologias e bibliotecas utilizadas:**
+- MySQL
+- POO(Programação Orientado a Objeto)
+- Express
+- Knex
+- Typescript
+- Node.js
+- Cors
+- Dotenv
 
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
+---
+## Documentação:
+https://documenter.getpostman.com/view/18387481/UVeMK4PS
 
-As funcionalidades básicas são:
+*Modo de usar*
 
-→ Criar estudante;
-
-→ Criar docente;
-
-→ Criar turma;
-
-→ Adicionar estudante na turma;
-
-→ Adicionar docente na turma;
-
-→ Pegar a idade de algum estudante a partir do id
+- abrir o terminal e rodar o comando : npm i
+- abrir o terminal no vscode, é só clicar em "Terminal" e ele vai abrir.
+- você deve ir do lado de onde está escrito "powershell" tem um simbolo de "+" do lado dele tem uma setinha, use ela e selecione o git bash.
+- com o git bash aberto rode o comando npm run start.
+- abra o postman e coloque essa url: http://localhost:3003
+- depois é só testar os parametros que quiser.
+- se quiser pegar todos os estudantes você deve usar o metodo get e essa url: http://localhost: 3003/student
