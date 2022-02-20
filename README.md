@@ -1,33 +1,41 @@
 ## LabenuSystem:
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+### Está API foi criada com intuito de treinar habilidades de backend. Ela simula um sistema de administração interna de um curso, com estudantes, docentes e turma.
 
-1. Estudantes 
+**O que funciona**
+- Pegar todos estudantes ou pegar um estudante especifico por nome.
+- Pegar todos os estudantes de um hobby especifico.
+- Atualizar a turma de um estudantes especifico.
+- Criar estudante.
+- Pegar todos docentes.
+- Atualizar a turma do docente.
+- Criar Docente.
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+**O que não funciona**
+- Criar turmas.
+- Buscar Turmas ativas.
+- Mudar turma de módulo.
 
-2. Docente
+**Tecnologias e bibliotecas ultizadas**
+- MySQL
+- POO(Programação Orientado a Objeto)
+- Express
+- Knex
+- Typescript
+- Node.js
+- Cors
+- Dotenv
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
 
-3. Turma
+## Documentação:
+https://documenter.getpostman.com/view/18387481/UVeMK4PS
 
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
-
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
-
-As funcionalidades básicas são:
-
-→ Criar estudante;
-
-→ Criar docente;
-
-→ Criar turma;
-
-→ Adicionar estudante na turma;
-
-→ Adicionar docente na turma;
-
-→ Pegar a idade de algum estudante a partir do id
+*Modo de usar*
+- abrir o terminal e rodar o comando : npm i 
+- abrir o terminal no vscode, é só clicar em "Terminal" e ele vai abrir. 
+- você deve ir do lado de onde está escrito "powershell" tem um simbolo de "+" do lado dele tem uma setinha, use ela e selecione o git bash.
+- com o git bash aberto rode o comando npm run start. 
+- abra o postman e coloque essa url: http://localhost:3003 
+- depois é só testar os parametros que quiser.
+- se quiser pegar todos os estudantes você deve usar o metodo get e essa url: http://localhost: 3003/student
