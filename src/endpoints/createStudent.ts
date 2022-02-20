@@ -68,7 +68,7 @@ export const createStudent = async (req: Request, res: Response) => {
                     res.status(422)
                     break
                 default: res.status(500)
-                
+
             }
 
             res.send(error.message)
