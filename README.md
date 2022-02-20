@@ -53,7 +53,7 @@
 ---
 >>>>>>> 502a0391d3c5bf749836aa0e42c728025fc8efb2
 ## Documentação:
-https://documenter.getpostman.com/view/18387481/UVeMK4PS
+https://documenter.getpostman.com/view/18386406/UVkjwxgs
 
 *Modo de usar*
 <<<<<<< HEAD
