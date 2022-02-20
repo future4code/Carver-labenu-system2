@@ -1,4 +1,4 @@
-import { getStudent } from './../services/getStudent';
+import { getStudent } from '../services/selectStudent';
 import { updateStudent } from './../services/updateStudent';
 import { Request, Response } from "express"
 import { selectClass } from '../services/selectClass';

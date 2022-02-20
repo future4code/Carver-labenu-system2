@@ -1,7 +1,7 @@
 import { verificateAge } from './../services/verificateAge';
 import { selectClass } from './../services/selectClass';
 import { validateDate } from './../services/validateDate';
-import { getStudent } from './../services/getStudent';
+import { getStudent } from '../services/selectStudent';
 import { Request, Response } from "express";
 import { Student } from "../classes/Student.class";
 

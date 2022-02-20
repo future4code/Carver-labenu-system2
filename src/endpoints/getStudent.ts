@@ -1,4 +1,4 @@
-import { getStudent } from '../services/getStudent';
+import { getStudent } from '../services/selectStudent';
 import { Request, Response } from "express";
 
 export const getStudents = async (req: Request, res: Response) => {
