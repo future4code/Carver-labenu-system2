@@ -1,3 +1,4 @@
+import { verificateAge } from './../services/verificateAge';
 import { selectClass } from './../services/selectClass';
 import { validateDate } from './../services/validateDate';
 import { getStudent } from './../services/getStudent';
@@ -9,12 +10,13 @@ export const createStudent = async (req: Request, res: Response) => {
 
         const { name, email, birth_date, class_id, hobbies } = req.body
 
-        //VERIFICAÇÕES
+        // VERIFICAÇÕES
+
         if (!name || !email || !birth_date || !class_id || !hobbies) {
             throw new Error("Algum parâmetro não foi enviado.")
         }
 
-        const verificateEmail = await getStudent("%", email)
+        const verificateEmail = await getStudent("%", email, "%")
 
         if (verificateEmail.length) {
             throw new Error("Esse email já existe.")
@@ -22,6 +24,10 @@ export const createStudent = async (req: Request, res: Response) => {
 
         if (validateDate(birth_date) === false) {
             throw new Error("Birth_date está no formato errado: DD/MM/YYYY")
+        }
+
+        if (verificateAge(birth_date) === false) {
+            throw new Error("Você colocou uma data maior que a atual ou não possui idade o suficiente para fazer parte da Labenu")
         }
 
         const verificateClass = await selectClass(class_id)
@@ -34,7 +40,7 @@ export const createStudent = async (req: Request, res: Response) => {
             throw new Error("Hobbies não enviados")
         }
 
-        //----------------------------------------------------------
+        // ----------------------------------------------------------
 
         new Student(name, email, birth_date, class_id, hobbies)
         res.status(201).send("Usuário criado.")
@@ -43,11 +49,11 @@ export const createStudent = async (req: Request, res: Response) => {
         if (error instanceof Error) {
             switch (error.message) {
 
-                case "Esse email já existe.":
-                    res.status(409)
-                    break
                 case "Turma não encontrada.":
                     res.status(404)
+                    break
+                case "Esse email já existe.":
+                    res.status(409)
                     break
                 case "Algum parâmetro não foi enviado.":
                     res.status(422)
@@ -58,7 +64,11 @@ export const createStudent = async (req: Request, res: Response) => {
                 case "Hobbies não enviados":
                     res.status(422)
                     break
+                case "Você colocou uma data maior que a atual ou não possui idade o suficiente para fazer parte da Labenu":
+                    res.status(422)
+                    break
                 default: res.status(500)
+                
             }
 
             res.send(error.message)
