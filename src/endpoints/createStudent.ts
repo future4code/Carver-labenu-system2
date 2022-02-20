@@ -4,6 +4,7 @@ import { validateDate } from './../services/validateDate';
 import { getStudent } from '../services/selectStudent';
 import { Request, Response } from "express";
 import { Student } from "../classes/Student.class";
+import { validateEmail } from '../services/validateEmail';
 
 export const createStudent = async (req: Request, res: Response) => {
     try {
@@ -14,6 +15,10 @@ export const createStudent = async (req: Request, res: Response) => {
 
         if (!name || !email || !birth_date || !class_id || !hobbies) {
             throw new Error("Algum parâmetro não foi enviado.")
+        }
+
+        if (validateEmail(email) === false) {
+            throw new Error("Email não está no formato certo: string@string.string")
         }
 
         const verificateEmail = await getStudent("%", email, "%")
@@ -65,6 +70,9 @@ export const createStudent = async (req: Request, res: Response) => {
                     res.status(422)
                     break
                 case "Você colocou uma data maior que a atual ou não possui idade o suficiente para fazer parte da Labenu":
+                    res.status(422)
+                    break
+                case "Email não está no formato certo: string@string.string":
                     res.status(422)
                     break
                 default: res.status(500)
