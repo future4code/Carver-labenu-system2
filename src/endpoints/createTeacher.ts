@@ -3,9 +3,9 @@ import { Teachers } from "../classes/Teachers.class";
 import { selectClass } from "../services/selectClass";
 import { selectIdSpecialty } from "../services/selectIdSpecialty";
 import { selectTeacherById } from "../services/selectTeacherById";
-import { validateDate } from "../services/validateDate";
-import { validateEmail } from "../services/validateEmail";
-import { verificateAge } from "../services/verificateAge";
+import { validateDate } from "../uteis/validateDate";
+import { validateEmail } from "../uteis/validateEmail";
+import { verificateAge } from "../uteis/verificateAge";
 
 export const createTeacher = async (req: Request, res: Response) => {
     try {

@@ -1,10 +1,10 @@
-import { verificateAge } from './../services/verificateAge';
+import { verificateAge } from './../uteis/verificateAge';
 import { selectClass } from './../services/selectClass';
-import { validateDate } from './../services/validateDate';
+import { validateDate } from '../uteis/validateDate';
 import { getStudent } from '../services/selectStudent';
 import { Request, Response } from "express";
 import { Student } from "../classes/Student.class";
-import { validateEmail } from '../services/validateEmail';
+import { validateEmail } from '../uteis/validateEmail';
 
 export const createStudent = async (req: Request, res: Response) => {
     try {
